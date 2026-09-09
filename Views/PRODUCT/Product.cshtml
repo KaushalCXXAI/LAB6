@@ -1,0 +1,26 @@
+﻿@model List<LAB6.Models.Productmodel>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Product</title>
+</head>
+<body>
+    <div>
+        @foreach (var item in Model)
+        {
+            <div class="product-card">
+                <img src="@item.Img" />
+                <h3>@item.Name</h3>
+                <p>Category: @item.Category</p>
+                <p class="price">$@item.Price</p>
+            </div>
+        }
+    </div>
+</body>
+</html>
