@@ -1,0 +1,22 @@
+﻿@model LAB6.Models.Productmodel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>details</title>
+</head>
+<body>
+    <div>
+        <h1>@Model.Name</h1>
+        <h3>@Model.Category</h3>
+        <img src="@Model.Img" width="200" />
+        <p>$@Model.Price</p>
+        <a href=@Url.Action("Index","Product")>back to home</a>
+    </div>
+</body>
+</html>

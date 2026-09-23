@@ -15,7 +15,12 @@ namespace LAB6.Controllers
             List<Productmodel> p = GetProduct();
             return View("product",p);
         }
-
+        public ActionResult Details(int id)
+        {
+            List<Productmodel> p = GetProduct();
+            Productmodel product = p.FirstOrDefault(x => x.Id == id);
+            return View("details", product);
+        }
         private List<Productmodel> GetProduct()
         {
             return new List<Productmodel>

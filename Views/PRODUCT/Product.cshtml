@@ -12,15 +12,24 @@
 </head>
 <body>
     <div>
-        @foreach (var item in Model)
-        {
-            <div class="product-card">
-                <img src="@item.Img" />
-                <h3>@item.Name</h3>
-                <p>Category: @item.Category</p>
-                <p class="price">$@item.Price</p>
-            </div>
-        }
+        <table border="1">
+            <tr>
+                <td>name</td>
+                <td>category</td>
+                <td>price</td>
+                <td>actions</td>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Category</td>
+                    <td>$@item.Price</td>
+                    <td>@Html.ActionLink("View Details", "Details", new { id = @item.Id })</td>
+                </tr>
+            }
+        </table>
     </div>
 </body>
 </html>
